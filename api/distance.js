@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const dest = (req.query.dest || "").toString().trim();
     if (!dest) return res.status(400).json({ ok: false, error: "Missing dest" });
